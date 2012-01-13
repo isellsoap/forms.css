@@ -31,3 +31,7 @@ Some elements are just to hard to manage. I left those out.
 * This is a work in progress.
 * I’ll try to extend the browser support.
 * CSS documentation will be extended step by step.
+
+## License
+
+forms.css is published under the [MIT license](http://www.opensource.org/licenses/mit-license) and [GPL v3](http://opensource.org/licenses/GPL-3.0).
