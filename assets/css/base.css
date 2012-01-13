@@ -1,0 +1,518 @@
+@charset 'utf-8';
+
+/*
+ * GENERAL ADJUSTMENTS
+ * ###########################################################################
+ * ###########################################################################
+ * ###########################################################################
+ */
+
+/*
+ * Global reset of paddings and margins for all HTML elements
+ * ###########################################################################
+ */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*
+ * HTML5 display definitions
+ * ###########################################################################
+ */
+
+/*
+ * Adjusting visual formatting model to block level
+ */
+
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
+}
+
+/*
+ * Basic background color, text color and font settings
+ * ###########################################################################
+ */
+
+html {
+	background: #fff;
+	color: #333;
+	font: 100%/1.5 'Neue Helvetica', Helvetica, Arial, sans-serif;
+	margin: 2em auto;
+	overflow-y: scroll;
+	width: 60em;
+}
+
+/*
+ * Headings
+ * ###########################################################################
+ */
+
+h1,
+h2,
+h3 {
+	font-weight: 700;
+	line-height: 1.3;
+	margin: 1em 0 0.5em;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.25em;
+}
+
+/*
+ * Links
+ * ###########################################################################
+ */
+
+a {
+	color: #0068c4;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+a:focus,
+a:hover {
+	text-decoration: none;
+}
+
+/*
+ * Addresses outline displayed oddly in Chrome
+ */
+
+a:focus {
+	outline: thin dotted;
+}
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers
+ * people.opera.com/patrickl/experiments/keyboard/test
+ */
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+/*
+ * Smooth click effect
+ */
+
+a:active {
+	bottom: -1px;
+	position: relative;
+}
+
+/*
+ * Lists
+ * ###########################################################################
+ */
+
+dl,
+ol,
+ul {
+	margin: 1em 0 1em 1em;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+ol ol {
+	list-style-type: lower-latin;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+ul ul {
+	list-style-type: circle;
+}
+
+ol ol,
+ol ul,
+ul ul,
+ul ol {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd,
+li {
+	margin-left: 1em;
+}
+
+/*
+ * Text-level formatting
+ * ###########################################################################
+ */
+
+abbr[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+address,
+blockquote,
+cite,
+dfn,
+em,
+i,
+q,
+var {
+	font-style: italic;
+}
+
+address,
+blockquote,
+p,
+pre {
+	margin: 1em 0;
+}
+
+b, 
+strong {
+	font-weight: 700; 
+}
+
+blockquote,
+code,
+ins,
+kbd,
+mark,
+pre,
+samp,
+table,
+var {
+	color: #111;
+	padding: 1px;
+}
+
+blockquote,
+code,
+kbd,
+pre,
+samp,
+table,
+var {
+	background: #f5f5f5;
+	border: 1px solid #e5e5e5;
+}
+
+blockquote {
+	font-size: 1.5em;
+	margin: 1.5em 1em;
+	padding: 0.75em 1em;
+	position: relative;
+}
+
+blockquote::before,
+blockquote::after {
+	color: #e5e5e5;
+	font-family: Georgia, Times, serif;
+	font-size: 10em;
+	font-style: normal;
+	font-weight: 700;
+	position: absolute;
+	z-index: 0;
+}
+
+blockquote::before {
+	content: '“';
+	left: -0.13em;
+	top: -0.42em;
+}
+
+blockquote::after {
+	bottom: -0.88em;
+	content: '”';
+	right: -0.13em;
+}
+
+blockquote p,
+blockquote footer {
+	position: relative;
+	z-index: 1;
+}
+
+blockquote p:first-child {
+	margin-top: 0;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+blockquote footer,
+blockquote footer a {
+	color: #888;
+}
+
+/*
+ * Fixes some monospace font bugs
+ * http://toscho.de/2009/font-family-monospace-safari/
+ */
+
+code,
+kbd,
+pre,
+samp,
+var {
+	font-family: Menlo, 'Andale Mono', 'Courier New', monospace, serif;
+	font-size: 1em;
+}
+
+code,
+kbd,
+samp,
+var {
+	font-style: normal;
+	font-weight: 400;
+}
+
+del,
+s {
+	text-decoration: line-through;
+}
+
+/*
+ * Avoids visible outlines on div containers in Webkit browsers
+ */
+
+div {
+	outline: 0;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #ccc;
+	display: block;
+	height: 1px;
+	margin: 2em 0;
+}
+
+ins,
+mark {
+	background: #ff9;
+}
+
+ins,
+u {
+	text-decoration: none;
+}
+
+kbd kbd {
+	border: 0;
+	padding: 0;
+}
+
+/*
+ * Improves readability of pre-formatted text in all browsers
+ * http://toscho.de/2012/css-tab-size/
+ */
+
+pre {
+	padding: 0.5em 0.75em;
+	-moz-tab-size: 4;
+	-ms-tab-size: 4;
+	-o-tab-size: 4;
+	-webkit-tab-size: 4;
+	tab-size: 4;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+/*
+ * Quotation marks are highly language specific
+ * http://meiert.com/en/blog/20090603/punctuation-cheat-sheet/
+ */
+
+q {
+	quotes: none;
+}
+
+q::before {
+	content: '“';
+}
+
+q::after {
+	content: '”';
+}
+
+q q::before {
+	content: '‘';
+}
+
+q q::after {
+	content: '’';
+}
+
+small,
+sub,
+sup {
+	font-size: .75em;
+}
+
+/*
+ * Prevents sub and sup affecting line-height in all browsers
+ * gist.github.com/413930
+ */
+
+sub,
+sup {
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -.25em;
+}
+
+sup {
+	top: -.5em;
+}
+
+/*
+ * Tables
+ * ###########################################################################
+ */
+
+table {
+	border-bottom: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+	line-height: 1.5;
+	margin: 1em auto;
+}
+
+caption {
+	caption-side: bottom;
+}
+
+th,
+td {
+	padding: 0.25em .5em;
+	text-align: left;
+	vertical-align: top;
+}
+
+th {
+	background: #e5e5e5;
+	font-weight: 700;
+}
+
+thead th,
+tfoot th {
+	background: #333;
+	border: solid #333;
+	border-width: 1px 1px 0 1px;
+	color: #fff;
+}
+
+tr:nth-child(even) th {
+	background: #dedede;
+}
+
+tr:nth-child(odd) td {
+	background: #fff;
+}
+
+tbody tr:hover th,
+tr:hover td {
+	background: #fee;
+}
+
+tr td:hover {
+	background: #fdd;
+}
+
+tbody tr:last-child th,
+tbody tr:last-child td {
+	border-bottom: 1px solid #e5e5e5;
+}
+	
+/*
+ * Embedded content
+ * ###########################################################################
+ */
+
+figure,
+caption {
+	text-align: center;
+}
+
+figure,
+iframe {
+	margin: 1.5em auto;
+}
+
+figure {
+	line-height: 1.5;
+}
+
+figure iframe {
+	margin: 0 auto;
+}
+
+figcaption,
+caption {
+	color: #888;
+	font-size: 0.875em;
+	font-style: italic;
+	line-height: 1.3;
+	padding: 0.6em 0.5em 0;
+}
+
+/*
+ * 1. Neat trick for small viewports
+ */
+
+img {
+	border: 0;
+	max-width: 100%; /* 1 */
+}
+
+img {
+	vertical-align: bottom;
+}
+
+/*
+ * LOGIC UNITS
+ * ###########################################################################
+ * ###########################################################################
+ * ###########################################################################
+ */
+
+/* Bigger text for introductory words
+ * ###########################################################################
+ */
+
+.intro {
+	font-size: 1.125em;
+}
