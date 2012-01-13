@@ -1,6 +1,10 @@
 # forms.css
 
-My way of “teaching your forms some manners”. Obviously massively inspired by Nathan Smith’s awesome [formalize](https://github.com/nathansmith/formalize). You have to absolutely check it out!
+Consistent forms across all major browsers.
+
+---
+
+My way of “teaching your forms some manners”. Obviously massively inspired by [Nathan Smith](http://sonspring.com/)’s awesome [formalize](https://github.com/nathansmith/formalize).
 
 ## Browser support
 
