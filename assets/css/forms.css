@@ -1,0 +1,370 @@
+@charset 'utf-8';
+
+/*
+ * Global reset of paddings and margins for all HTML elements
+ * ###########################################################################
+ */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*
+ * Basic background color, text color and font settings
+ * ###########################################################################
+ */
+
+html {
+	background: #fff;
+	color: #333;
+	font: 100%/1.5 'Neue Helvetica', Helvetica, Arial, sans-serif;
+	margin: 2em auto;
+	width: 60em;
+}
+
+/*
+ * Forms
+ * ###########################################################################
+ */
+
+fieldset {
+	border: 1px solid #ccc;
+	margin: 1.5em 0;
+	padding: 1em;
+}
+
+legend {
+	color: #888;
+	padding: 0 .5em;
+}
+
+label {
+	display: block;		
+}
+
+input[type='checkbox'] + label,
+input[type='radio'] + label {
+	display: inline-block;
+	margin: 0 2em 0 0;
+}
+
+/*
+ * Consistent cursor behaviour
+ */
+
+button,
+input[type='button'],
+input[type='checkbox'],
+input[type='file'],
+input[type='radio'],
+input[type='reset'],
+input[type='submit'],
+label,
+select {
+	cursor: pointer;
+}
+
+/*
+ * 1. Firefox doesn’t inherit font-family specified for select (optgroup needs explicit declaration)
+ * 2. https://github.com/nathansmith/formalize/issues/43
+ */
+
+button,
+input,
+optgroup, /* 1 */
+select,
+textarea {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	vertical-align: top; /* 2 */
+}
+
+button,
+input,
+select,
+textarea {
+	margin-bottom: 1em;
+}
+
+button,
+input[type='button'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='reset'],
+input[type='search'],
+input[type='submit'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+select,
+textarea {
+	-moz-background-clip: padding;
+	-ms-background-clip: padding-box;
+	-o-background-clip: padding-box;
+	-webkit-background-clip: padding;
+	background-clip: padding-box;
+	border: 1px solid;
+	font-size: 1em;
+}
+
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+select,
+textarea {
+	background-color: #fff;
+	border-color: #999 #bbb #ddd;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 1.8em;
+	padding: 2px 3px;
+}
+
+/*
+ * Known issue: IE 9 ignores background-color on select hover
+ */
+
+input[type='date']:hover,
+input[type='datetime']:hover,
+input[type='datetime-local']:hover,
+input[type='email']:hover,
+input[type='month']:hover,
+input[type='number']:hover,
+input[type='password']:hover,
+input[type='search']:hover,
+input[type='tel']:hover,
+input[type='text']:hover,
+input[type='url']:hover,
+select:hover,
+select[size]:hover,
+textarea:hover {
+	background-color: #f5f5f5;
+}
+
+button:focus,
+input[type='button']:focus,
+input[type='date']:focus,
+input[type='datetime']:focus,
+input[type='datetime-local']:focus,
+input[type='email']:focus,
+input[type='month']:focus,
+input[type='number']:focus,
+input[type='password']:focus,
+input[type='reset']:focus,
+input[type='search']:focus,
+input[type='submit']:focus,
+input[type='tel']:focus,
+input[type='text']:focus,
+input[type='url']:focus,
+select:focus,
+select[size]:focus,
+textarea:focus {
+	background-color: #fff;
+	border-color: #0068c4;
+	box-shadow: #0068c4 0 0 .5em 0;
+	outline: 0;
+	z-index: 1;
+}
+
+/*
+ * Buttons
+ */
+
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+	background: #e5e5e5 url('img/button.png') repeat-x;
+	background-image: -moz-linear-gradient(#fff, #e5e5e5);
+	background-image: -ms-linear-gradient(#fff, #e5e5e5);
+	background-image: -o-linear-gradient(#fff, #e5e5e5);
+	background-image: -webkit-linear-gradient(#fff, #e5e5e5);
+	background-image: linear-gradient(#fff, #e5e5e5);
+	border-color: #ddd #bbb #999;
+	font-weight: 700;
+	line-height: 1.3;
+	overflow: visible;
+	padding: 3px .5em;
+	text-shadow: #fff 0 1px 1px;
+	width: auto;
+	*padding-top: 2px;
+	  *padding-bottom: 0;
+	overflow: visible;
+}
+
+button:hover,
+input[type='button']:hover,
+input[type='reset']:hover,
+input[type='submit']:hover {
+	background-image: -moz-linear-gradient(#fff, #d9d9d9);
+	background-image: -ms-linear-gradient(#fff, #d9d9d9);
+	background-image: -o-linear-gradient(#fff, #d9d9d9);
+	background-image: -webkit-linear-gradient(#fff, #d9d9d9);
+	background-image: linear-gradient(#fff, #d9d9d9);
+}
+
+button:active,
+input[type='button']:active,
+input[type='reset']:active,
+input[type='submit']:active {
+	background-image: -moz-linear-gradient(#d9d9d9, #fff);
+	background-image: -ms-linear-gradient(#d9d9d9, #fff);
+	background-image: -o-linear-gradient(#d9d9d9, #fff);
+	background-image: -webkit-linear-gradient(#d9d9d9, #fff);
+	background-image: linear-gradient(#d9d9d9, #fff);
+	border-color: #999 #bbb #ddd;
+	box-shadow: inset rgba(0, 0, 0, .25) 0 1px 2px 0;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+	position: relative;
+	top: 5px;
+	vertical-align: top;
+}
+
+input[type='radio'] {
+	top: 4px \0;
+}
+
+optgroup {
+	font-style: normal;
+	font-weight: 700;
+}
+
+/*
+ * Due to the hard * reset. Firefox needs this.
+ */
+
+option {
+	padding-left: 1em;
+}
+
+select[multiple],
+select[size],
+textarea {
+  height: auto;
+}
+
+select[size='0'],
+select[size='1'] {
+	height: 1.8em;
+}
+
+@media (-webkit-min-device-pixel-ratio: 0) {
+	
+	input[type='checkbox'] {
+		top: 6px;
+	}
+	
+	input[type='search'] {
+		-webkit-appearance: none;
+	}
+
+	input[type='search']::-webkit-search-decoration {
+		display: none;
+	}
+	
+	select {
+		-webkit-appearance: none;
+		border-radius: 0;
+	}
+	
+	select[multiple],
+	select[multiple][size],
+	select[size] {
+		background-image: none;
+		padding-right: 3px;
+	}
+	
+	select,
+	select[size='0'],
+	select[size='1'] {
+		background: transparent url('img/select_arrow.gif') no-repeat right center;
+		padding-right: 1em;
+	}
+	
+	::-webkit-input-placeholder {
+		color: #888;
+	}
+
+}
+
+textarea {
+	min-height: 5em;
+	overflow: auto;
+	resize: vertical;
+	vertical-align: top;
+	width: 100%;
+}
+
+/*
+ * Removes inner padding and border in FF3+
+ * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+ */
+
+::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+textarea[disabled],
+select[disabled],
+input[type='date'][disabled],
+input[type='datetime'][disabled],
+input[type='datetime-local'][disabled],
+input[type='email'][disabled],
+input[type='month'][disabled],
+input[type='number'][disabled],
+input[type='password'][disabled],
+input[type='search'][disabled],
+input[type='tel'][disabled],
+input[type='text'][disabled],
+input[type='time'][disabled],
+input[type='url'][disabled],
+input[type='week'][disabled] {
+	background-color: #eee;
+}
+
+button[disabled],
+input[disabled],
+select[disabled],
+select[disabled] option,
+select[disabled] optgroup,
+textarea[disabled] {
+	box-shadow: none;
+	color: #888;
+	cursor: default;
+	-khtml-user-select: none;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+	color: #888;
+}
+
+/*
+YUI 3.4.1 (build 4118)
+Copyright 2011 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+.yui3-g{letter-spacing:-0.31em;*letter-spacing:normal;word-spacing:-0.43em}.yui3-u,.yui3-u-1,.yui3-u-1-2,.yui3-u-1-3,.yui3-u-2-3,.yui3-u-1-4,.yui3-u-3-4,.yui3-u-1-5,.yui3-u-2-5,.yui3-u-3-5,.yui3-u-4-5,.yui3-u-1-6,.yui3-u-5-6,.yui3-u-1-8,.yui3-u-3-8,.yui3-u-5-8,.yui3-u-7-8,.yui3-u-1-12,.yui3-u-5-12,.yui3-u-7-12,.yui3-u-11-12,.yui3-u-1-24,.yui3-u-5-24,.yui3-u-7-24,.yui3-u-11-24,.yui3-u-13-24,.yui3-u-17-24,.yui3-u-19-24,.yui3-u-23-24{display:inline-block;zoom:1;*display:inline;letter-spacing:normal;word-spacing:normal;vertical-align:top}.yui3-u-1{display:block}.yui3-u-1-2{width:50%}.yui3-u-1-3{width:33.33333%}.yui3-u-2-3{width:66.66666%}.yui3-u-1-4{width:25%}.yui3-u-3-4{width:75%}.yui3-u-1-5{width:20%}.yui3-u-2-5{width:40%}.yui3-u-3-5{width:60%}.yui3-u-4-5{width:80%}.yui3-u-1-6{width:16.656%}.yui3-u-5-6{width:83.33%}.yui3-u-1-8{width:12.5%}.yui3-u-3-8{width:37.5%}.yui3-u-5-8{width:62.5%}.yui3-u-7-8{width:87.5%}.yui3-u-1-12{width:8.3333%}.yui3-u-5-12{width:41.6666%}.yui3-u-7-12{width:58.3333%}.yui3-u-11-12{width:91.6666%}.yui3-u-1-24{width:4.1666%}.yui3-u-5-24{width:20.8333%}.yui3-u-7-24{width:29.1666%}.yui3-u-11-24{width:45.8333%}.yui3-u-13-24{width:54.1666%}.yui3-u-17-24{width:70.8333%}.yui3-u-19-24{width:79.1666%}.yui3-u-23-24{width:95.8333%}
