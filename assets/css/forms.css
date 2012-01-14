@@ -1,5 +1,13 @@
 @charset 'utf-8';
 
+/*
+ * Basic settings for fieldset, legend and label
+ * 
+ * This section is tailored for the demo page with all given HTML markup 
+ * dependencies and so on. Please change according to your needs.
+ * ###########################################################################
+ */
+
 fieldset {
 	border: 1px solid #ccc;
 	margin: 1.5em 0;
@@ -29,6 +37,10 @@ input[type='radio'] + label {
 
 /*
  * Consistent cursor behaviour
+ *
+ * Known issue regarding “select”: WebKit uses “pointer” only when the “size” 
+ * attribute with value 0 or 1 is present.
+ * ###########################################################################
  */
 
 button,
@@ -44,8 +56,9 @@ select {
 }
 
 /*
- * 1. Firefox doesn’t inherit font-family specified for select (optgroup needs explicit declaration)
- *    https://github.com/nathansmith/formalize/issues/41
+ * 1. Firefox doesn’t inherit font-family specified for select (optgroup needs
+ *    explicit declaration) https://github.com/nathansmith/formalize/issues/41
+ *    
  * 2. https://github.com/nathansmith/formalize/issues/43
  */
 
