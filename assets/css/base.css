@@ -64,7 +64,7 @@ h2,
 h3 {
 	font-weight: 700;
 	line-height: 1.3;
-	margin: 1em 0 0.5em;
+	margin: 1em 0 .5em;
 }
 
 h1 {
@@ -226,7 +226,7 @@ var {
 blockquote {
 	font-size: 1.5em;
 	margin: 1.5em 1em;
-	padding: 0.75em 1em;
+	padding: .75em 1em;
 	position: relative;
 }
 
@@ -243,14 +243,14 @@ blockquote::after {
 
 blockquote::before {
 	content: '“';
-	left: -0.13em;
-	top: -0.42em;
+	left: -.13em;
+	top: -.42em;
 }
 
 blockquote::after {
-	bottom: -0.88em;
+	bottom: -.88em;
 	content: '”';
-	right: -0.13em;
+	right: -.13em;
 }
 
 blockquote p,
@@ -336,7 +336,7 @@ kbd kbd {
  */
 
 pre {
-	padding: 0.5em 0.75em;
+	padding: .5em .75em;
 	-moz-tab-size: 4;
 	-ms-tab-size: 4;
 	-o-tab-size: 4;
@@ -417,7 +417,7 @@ caption {
 
 th,
 td {
-	padding: 0.25em .5em;
+	padding: .25em .5em;
 	text-align: left;
 	vertical-align: top;
 }
@@ -483,10 +483,10 @@ figure iframe {
 figcaption,
 caption {
 	color: #888;
-	font-size: 0.875em;
+	font-size: .875em;
 	font-style: italic;
 	line-height: 1.3;
-	padding: 0.6em 0.5em 0;
+	padding: .6em .5em 0;
 }
 
 /*
@@ -496,9 +496,6 @@ caption {
 img {
 	border: 0;
 	max-width: 100%; /* 1 */
-}
-
-img {
 	vertical-align: bottom;
 }
 
