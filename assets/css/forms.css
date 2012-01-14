@@ -13,6 +13,12 @@ legend {
 
 label {
 	display: block;		
+	margin-top: 1em;
+}
+
+legend + label,
+legend + div label {
+	margin-top: 0;
 }
 
 input[type='checkbox'] + label,
@@ -39,6 +45,7 @@ select {
 
 /*
  * 1. Firefox doesn’t inherit font-family specified for select (optgroup needs explicit declaration)
+ *    https://github.com/nathansmith/formalize/issues/41
  * 2. https://github.com/nathansmith/formalize/issues/43
  */
 
@@ -49,13 +56,6 @@ select,
 textarea {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	vertical-align: top; /* 2 */
-}
-
-button,
-input,
-select,
-textarea {
-	margin-bottom: 1em;
 }
 
 button,
