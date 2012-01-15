@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
 /*
- * Basic settings for fieldset, legend and label
+ * BASIC DEMO PAGE SETUP
  * 
  * This section is tailored for the demo page with all given HTML markup 
  * dependencies and so on. Please change according to your needs.
@@ -36,10 +36,30 @@ input[type='radio'] + label {
 }
 
 /*
- * Consistent cursor behaviour
+ * BASIC SETTINGS FOR INTERACTIVE FORM ELEMENTS
  *
- * Known issue regarding “select”: WebKit uses “pointer” only when the “size” 
- * attribute with value 0 or 1 is present.
+ * 1. “optgroup” needs explicit declaration because Firefox doesn’t inherit 
+ *    font family specified for “select”. For more information follow link: 
+ *    https://github.com/nathansmith/formalize/issues/41
+ * 2. Improves appearance and consistency in all browsers (especially for 
+ *    check boxes and radio buttons).
+ * ###########################################################################
+ */
+
+button,
+input,
+optgroup, /* 1 */
+select,
+textarea {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	vertical-align: middle; /* 2 */
+}
+
+/*
+ * CONSISTENT CURSOR BEHAVIOUR
+ *
+ * Known issue regarding “select”: WebKit browsers use “pointer” only when 
+ * “size” attribute with value 0 or 1 is present.
  * ###########################################################################
  */
 
@@ -53,22 +73,6 @@ input[type='submit'],
 label,
 select {
 	cursor: pointer;
-}
-
-/*
- * 1. Firefox doesn’t inherit font-family specified for select (optgroup needs
- *    explicit declaration) https://github.com/nathansmith/formalize/issues/41
- *    
- * 2. https://github.com/nathansmith/formalize/issues/43
- */
-
-button,
-input,
-optgroup, /* 1 */
-select,
-textarea {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	vertical-align: top; /* 2 */
 }
 
 button,
@@ -121,7 +125,7 @@ textarea {
 }
 
 /*
- * Known issue: IE 9 ignores background-color on select hover
+ * Known issue regarding “select”: IE 9 ignores background color.
  */
 
 input[type='date']:hover,
@@ -212,14 +216,14 @@ input[type='submit']:active {
 	box-shadow: inset rgba(0, 0, 0, .25) 0 1px 2px 0;
 }
 
-input[type='radio'],
+/* https://github.com/nathansmith/formalize/issues/45 */
+
 input[type='checkbox'] {
-	position: relative;
-	top: 5px;
+	margin: 2px 1px;
 }
 
 input[type='radio'] {
-	top: 4px \0;
+	margin: 1px;
 }
 
 optgroup {
@@ -235,6 +239,15 @@ option {
 	padding-left: 1em;
 }
 
+/*
+ * https://github.com/nathansmith/formalize/issues/43
+ */
+
+select {
+	vertical-align: top;
+}
+
+
 select[multiple],
 select[size],
 textarea {
@@ -247,10 +260,6 @@ select[size='1'] {
 }
 
 @media (-webkit-min-device-pixel-ratio: 0) {
-	
-	input[type='checkbox'] {
-		top: 6px;
-	}
 	
 	input[type='search'] {
 		-webkit-appearance: none;
