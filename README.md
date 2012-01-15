@@ -2,6 +2,10 @@
 
 Consistent looking forms across all major browsers. Check out the [demo](http://frncs.co/forms/demo.html) and read through the [CSS file](https://github.com/isellsoap/forms.css/blob/master/assets/css/forms.css).
 
+## How to use it
+
+Include the `forms.css` file in your web project and change it to your needs.
+
 ## Unstyled elements
 
 Some elements (like `input[type='file']` and `input[type='range']`) are just to hard to manage. I left those out.
