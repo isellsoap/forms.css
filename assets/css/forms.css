@@ -95,6 +95,7 @@ textarea {
 	background-clip: padding-box;
 	border: 1px solid;
 	font-size: 1em;
+	height: 1.8em;
 }
 
 input[type='date'],
@@ -116,7 +117,6 @@ textarea {
 	-ms-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	height: 1.8em;
 	padding: 2px 3px;
 }
 
@@ -186,10 +186,6 @@ input[type='submit'] {
 	overflow: visible;
 	padding: 3px .5em;
 	text-shadow: #fff 0 1px 1px;
-	width: auto;
-	*padding-top: 2px;
-	  *padding-bottom: 0;
-	overflow: visible;
 }
 
 button:hover,
@@ -220,7 +216,6 @@ input[type='radio'],
 input[type='checkbox'] {
 	position: relative;
 	top: 5px;
-	vertical-align: top;
 }
 
 input[type='radio'] {
