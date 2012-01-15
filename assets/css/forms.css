@@ -39,7 +39,7 @@ input[type='radio'] + label {
  * BASIC SETTINGS FOR INTERACTIVE FORM ELEMENTS
  *
  * 1. “optgroup” needs explicit declaration because Firefox doesn’t inherit 
- *    font family specified for “select”. For more information follow link: 
+ *    font family specified for “select”. More information: 
  *    https://github.com/nathansmith/formalize/issues/41
  * 2. Improves appearance and consistency in all browsers (especially for 
  *    check boxes and radio buttons).
@@ -171,14 +171,17 @@ textarea:focus {
 }
 
 /*
- * Buttons
+ * CLICKABLE BUTTONS
+ *
+ * 1. Fallback for all browsers not supporting linear gradients (like IE 9).
+ * ###########################################################################
  */
 
 button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-	background: #e5e5e5 url('img/button.png') repeat-x;
+	background: #e5e5e5 url('img/button.png') repeat-x; /* 1 */
 	background-image: -moz-linear-gradient(#fff, #e5e5e5);
 	background-image: -ms-linear-gradient(#fff, #e5e5e5);
 	background-image: -o-linear-gradient(#fff, #e5e5e5);
@@ -203,6 +206,10 @@ input[type='submit']:hover {
 	background-image: linear-gradient(#fff, #d9d9d9);
 }
 
+/*
+ * “Pushed in” effect for active state.
+ */
+
 button:active,
 input[type='button']:active,
 input[type='reset']:active,
@@ -216,7 +223,10 @@ input[type='submit']:active {
 	box-shadow: inset rgba(0, 0, 0, .25) 0 1px 2px 0;
 }
 
-/* https://github.com/nathansmith/formalize/issues/45 */
+/* 
+ * Opera needs this due to universal reset in the base.css file. More
+ * information: https://github.com/nathansmith/formalize/issues/45
+ */
 
 input[type='checkbox'] {
 	margin: 2px 1px;
@@ -226,13 +236,17 @@ input[type='radio'] {
 	margin: 1px;
 }
 
+/* 
+ * Oddly only Firefox understands this. Result: Opera and IE have italic font
+ * style, WebKit and Firefox normal font style.
+ */
+
 optgroup {
 	font-style: normal;
-	font-weight: 700;
 }
 
 /*
- * Due to the hard * reset. Firefox needs this.
+ * Firefox needs this due to the hard universial reset in the base.css file.
  */
 
 option {
