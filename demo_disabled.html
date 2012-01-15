@@ -2,7 +2,10 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Demo (unstyled) | forms.css</title>
+		<title>Demo (disabled) | forms.css</title>
+		<link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssgrids/grids-min.css">
+		<link rel="stylesheet" href="assets/css/base.css">
+		<link rel="stylesheet" href="assets/css/forms.css">
 	</head>
 	<body>
 			
@@ -14,13 +17,13 @@
 				
 				<legend>Example 1</legend>
 				
-				<input type="checkbox" id="checkbox_1" name="checkbox_1">
+				<input disabled="disabled" type="checkbox" id="checkbox_1" name="checkbox_1">
 				<label for="checkbox_1">Test checkbox 1</label>
 				
-				<input type="checkbox" id="checkbox_2" name="checkbox_2">
+				<input disabled="disabled" type="checkbox" id="checkbox_2" name="checkbox_2">
 				<label for="checkbox_2">Test checkbox 2</label>
 				
-				<input type="checkbox" id="checkbox_3" name="checkbox_3">
+				<input disabled="disabled" type="checkbox" id="checkbox_3" name="checkbox_3">
 				<label for="checkbox_3">Test checkbox 3</label>
 			
 			</fieldset>
@@ -29,13 +32,13 @@
 				
 				<legend>Example 2</legend>
 				
-				<input type="radio" id="radio_1" name="test_radio_group">
+				<input disabled="disabled" type="radio" id="radio_1" name="test_radio_group">
 				<label for="radio_1">Test radio 1</label>
 				
-				<input type="radio" id="radio_2" name="test_radio_group">
+				<input disabled="disabled" type="radio" id="radio_2" name="test_radio_group">
 				<label for="radio_2">Test radio 2</label>
 				
-				<input type="radio" id="radio_3" name="test_radio_group">
+				<input disabled="disabled" type="radio" id="radio_3" name="test_radio_group">
 				<label for="radio_3">Test radio 3</label>
 				
 			</fieldset>
@@ -45,7 +48,7 @@
 				<legend>Example 3</legend>
 		
 					<label for="select_dd">Select drop-down</label>
-					<select id="select_dd" name="select_dd" size="1">
+					<select disabled="disabled" id="select_dd" name="select_dd" size="1">
 						<optgroup label="Group 1">
 							<option value="1">Some text goes here</option>
 							<option value="2">Another choice could be here</option>
@@ -62,8 +65,8 @@
 							<option value="9">Yet another item to be chosen</option>
 						</optgroup>
 					</select>
-					<input type="text" id="text_inline" name="text_inline" autofocus="autofocus">
-					<input type="submit" id="submit_1" name="submit_1" value="Submit">
+					<input disabled="disabled" type="text" id="text_inline" name="text_inline">
+					<input disabled="disabled" type="submit" id="submit_1" name="submit_1" value="Submit">
 					
 			</fieldset>
 			
@@ -76,7 +79,7 @@
 					<div class="yui3-u-1-3">
 						
 						<label for="select_multi_1">Multiple select with size 12</label>
-						<select id="select_multi_1" name="select_multi_1" multiple="multiple" size="12">
+						<select disabled="disabled" id="select_multi_1" name="select_multi_1" multiple="multiple" size="12">
 							<optgroup label="Group 1">
 								<option value="1">Some text goes here</option>
 								<option value="2">Another choice could be here</option>
@@ -99,7 +102,7 @@
 					<div class="yui3-u-1-3">
 						
 						<label for="select_multi_2">Multiple select with size 8</label>
-						<select id="select_multi_2" name="select_multi_2" multiple="multiple" size="8">
+						<select disabled="disabled" id="select_multi_2" name="select_multi_2" multiple="multiple" size="8">
 							<optgroup label="Group 1">
 								<option value="1">Some text goes here</option>
 								<option value="2">Another choice could be here</option>
@@ -122,7 +125,7 @@
 					<div class="yui3-u-1-3">
 						
 						<label for="select_multi_3">Multiple select with size 4</label>
-						<select id="select_multi_3" name="select_multi_3" multiple="multiple" size="4">
+						<select disabled="disabled" id="select_multi_3" name="select_multi_3" multiple="multiple" size="4">
 							<optgroup label="Group 1">
 								<option value="1">Some text goes here</option>
 								<option value="2">Another choice could be here</option>
@@ -151,7 +154,7 @@
 				<legend>Example 5</legend>
 				
 				<label for="textarea">textarea</label>
-				<textarea id="textarea" name="textarea" placeholder="This is a placeholder text."></textarea>
+				<textarea disabled="disabled" id="textarea" name="textarea" placeholder="This is a placeholder text."></textarea>
 			
 			</fieldset>
 			
@@ -164,49 +167,49 @@
 					<div class="yui3-u-1-4">
 						
 						<label for="date">date</label>
-						<input type="date" id="date" name="date">
+						<input disabled="disabled" type="date" id="date" name="date">
 						
 						<label for="datetime">datetime</label>
-						<input type="datetime" id="datetime" name="datetime">
+						<input disabled="disabled" type="datetime" id="datetime" name="datetime">
 						
 						<label for="datetime-local">datetime-local</label>
-						<input type="datetime-local" id="datetime-local" name="datetime-local">
+						<input disabled="disabled" type="datetime-local" id="datetime-local" name="datetime-local">
 						
 					</div>
 					
 					<div class="yui3-u-1-4">
 						
 						<label for="email">email</label>
-						<input type="email" id="email" name="email">
+						<input disabled="disabled" type="email" id="email" name="email">
 						
 						<label for="month">month</label>
-						<input type="month" id="month" name="month">
+						<input disabled="disabled" type="month" id="month" name="month">
 						
 						<label for="number">number</label>
-						<input type="number" id="number" name="number" min="0" max="999" step="1">
+						<input disabled="disabled" type="number" id="number" name="number" min="0" max="999" step="1">
 						
 					</div>
 					
 					<div class="yui3-u-1-4">
 						
 						<label for="password">password</label>
-						<input type="password" id="password" name="password">
+						<input disabled="disabled" type="password" id="password" name="password">
 						
 						<label for="tel">tel</label>
-						<input type="tel" id="tel" name="tel">
+						<input disabled="disabled" type="tel" id="tel" name="tel">
 						
 						<label for="text">text</label>
-						<input type="text" id="text" name="text">
+						<input disabled="disabled" type="text" id="text" name="text">
 						
 					</div>
 					
 					<div class="yui3-u-1-4">
 						
 						<label for="url">url</label>
-						<input type="url" id="url" name="url" placeholder="http://">
+						<input disabled="disabled" type="url" id="url" name="url" placeholder="http://">
 						
 						<label for="search">search</label>
-						<input type="search" id="search" name="search">
+						<input disabled="disabled" type="search" id="search" name="search">
 						
 					</div>
 			
@@ -223,14 +226,14 @@
 					<div class="yui3-u-1-2">
 						
 						<label for="file">file</label>
-						<input type="file" id="file" name="file">
+						<input disabled="disabled" type="file" id="file" name="file">
 						
 					</div>
 					
 					<div class="yui3-u-1-2">
 						
 						<label for="range">range</label>
-						<input type="range" id="range" name="range">
+						<input disabled="disabled" type="range" id="range" name="range">
 						
 					</div>
 					
@@ -242,10 +245,11 @@
 				
 				<legend>All buttons in one place</legend>
 				
-				<input type="submit" id="buttons" name="submit" value="type='submit'">
-				<input type="button" id="button_1" name="button_1" value="type='button'">
-				<input type="reset" id="reset" name="reset" value="type='reset'">
-				<button id="button_2" name="button_2">button</button>
+				<input disabled="disabled" type="text" id="text_inline_1" name="text_inline_1">
+				<input disabled="disabled" type="submit" id="buttons" name="submit" value="type='submit'">
+				<input disabled="disabled" type="button" id="button_1" name="button_1" value="type='button'">
+				<input disabled="disabled" type="reset" id="reset" name="reset" value="type='reset'">
+				<button disabled="disabled">button</button>
 				
 			</fieldset>
 			
