@@ -1,6 +1,6 @@
 # forms.css
 
-Consistent forms across all major browsers. [Demo.](http://frncs.co/forms/demo.html)
+Consistent looking forms across all major browsers. Check out the [demo](http://frncs.co/forms/demo.html) and read through the [CSS file](https://github.com/isellsoap/forms.css/blob/master/assets/css/forms.css).
 
 ## Unstyled elements
 
@@ -10,7 +10,7 @@ Some elements (like `input[type='file']` and `input[type='range']`) are just to 
 
 * This is a work in progress.
 * I’ll try to extend the browser support.
-* CSS documentation will be extended step by step.
+* CSS documentation will be enhanced step by step.
 
 ## Browser support
 
