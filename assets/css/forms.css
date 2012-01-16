@@ -260,6 +260,7 @@ input[type='radio'] {
  */
 
 select {
+	line-height: normal;
 	vertical-align: top;
 }
 
