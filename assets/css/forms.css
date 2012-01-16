@@ -1,11 +1,31 @@
 @charset 'utf-8';
 
+/* 
+ * 1. “optgroup” needs explicit declaration because Firefox doesn’t inherit 
+ *    font family specified for “select”. More information: 
+ *    https://github.com/nathansmith/formalize/issues/41
+ * 2. Change this according to your site’s font (family) configuration. Be 
+ *    aware that changing font size and line height affects vertical alignment
+ *    of check boxes and radio buttons. I know, it sucks. But there’s just no
+ *    “holy grail” for vertically aligning those input types.
+ * 3. If you use a universal reset for “margin” and “padding” in your site’s 
+ *    base CSS file you don’t need this.
+ */
+
+form,
+button,
+input,
+select,
+optgroup, /* 1 */
+textarea {
+	font: 100%/1.5 'Helvetica Neue', Helvetica, Arial, sans-serif; /* 2 */
+	margin: 0; /* 3 */
+	padding: 0; /* 3 */
+}
+
 /*
- * BASIC DEMO PAGE SETUP
- * 
- * This section is tailored for the demo page with all given HTML markup 
- * dependencies and so on. Please change according to your needs.
- * ###########################################################################
+ * The following five rule sets are tailored to the demo page with all given 
+ * HTML markup dependencies and so on. Please change according to your needs.
  */
 
 fieldset {
@@ -20,13 +40,11 @@ legend {
 }
 
 label {
-	display: block;		
-	margin-top: 1em;
+	display: block;
 }
 
-legend + label,
-legend + div label {
-	margin-top: 0;
+input + label {
+	margin-top: 1em;
 }
 
 input[type='checkbox'] + label,
@@ -36,47 +54,31 @@ input[type='radio'] + label {
 }
 
 /*
- * BASIC SETTINGS FOR INTERACTIVE FORM ELEMENTS
- *
- * 1. “optgroup” needs explicit declaration because Firefox doesn’t inherit 
- *    font family specified for “select”. More information: 
- *    https://github.com/nathansmith/formalize/issues/41
- * 2. Improves appearance and consistency in all browsers (especially for 
- *    check boxes and radio buttons).
- * ###########################################################################
- */
-
-button,
-input,
-optgroup, /* 1 */
-select,
-textarea {
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	vertical-align: middle; /* 2 */
-}
-
-/*
- * CONSISTENT CURSOR BEHAVIOUR
- *
- * Known issue regarding “select”: WebKit browsers use “pointer” only when 
+ * Consistent cursor behaviour. Oddly WebKit browsers use “pointer” only when 
  * “size” attribute with value 0 or 1 is present.
- * ###########################################################################
  */
 
+label,
 button,
 input[type='button'],
-input[type='checkbox'],
-input[type='file'],
-input[type='radio'],
 input[type='reset'],
 input[type='submit'],
-label,
+input[type='checkbox'],
+input[type='radio'],
 select {
 	cursor: pointer;
 }
 
+/*
+ * The reason why I list all input types one by one and not just use 
+ * “input” is this: I don’t want to address input types “file” and “range”.
+ */
+
 button,
 input[type='button'],
+input[type='reset'],
+input[type='submit'],
+input[type='color'],
 input[type='date'],
 input[type='datetime'],
 input[type='datetime-local'],
@@ -84,12 +86,12 @@ input[type='email'],
 input[type='month'],
 input[type='number'],
 input[type='password'],
-input[type='reset'],
 input[type='search'],
-input[type='submit'],
 input[type='tel'],
 input[type='text'],
+input[type='time'],
 input[type='url'],
+input[type='week'],
 select,
 textarea {
 	-moz-background-clip: padding;
@@ -98,10 +100,10 @@ textarea {
 	-webkit-background-clip: padding;
 	background-clip: padding-box;
 	border: 1px solid;
-	font-size: 1em;
 	height: 1.8em;
 }
 
+input[type='color'],
 input[type='date'],
 input[type='datetime'],
 input[type='datetime-local'],
@@ -112,7 +114,9 @@ input[type='password'],
 input[type='search'],
 input[type='tel'],
 input[type='text'],
+input[type='time'],
 input[type='url'],
+input[type='week'],
 select,
 textarea {
 	background-color: #fff;
@@ -128,6 +132,7 @@ textarea {
  * Known issue regarding “select”: IE 9 ignores background color.
  */
 
+input[type='color']:hover,
 input[type='date']:hover,
 input[type='datetime']:hover,
 input[type='datetime-local']:hover,
@@ -138,15 +143,16 @@ input[type='password']:hover,
 input[type='search']:hover,
 input[type='tel']:hover,
 input[type='text']:hover,
+input[type='time']:hover,
 input[type='url']:hover,
+input[type='week']:hover,
 select:hover,
 select[size]:hover,
 textarea:hover {
 	background-color: #f5f5f5;
 }
 
-button:focus,
-input[type='button']:focus,
+input[type='color']:focus,
 input[type='date']:focus,
 input[type='datetime']:focus,
 input[type='datetime-local']:focus,
@@ -154,15 +160,19 @@ input[type='email']:focus,
 input[type='month']:focus,
 input[type='number']:focus,
 input[type='password']:focus,
-input[type='reset']:focus,
 input[type='search']:focus,
-input[type='submit']:focus,
 input[type='tel']:focus,
 input[type='text']:focus,
+input[type='time']:focus,
 input[type='url']:focus,
+input[type='week']:focus,
 select:focus,
 select[size]:focus,
-textarea:focus {
+textarea:focus,
+button:focus,
+input[type='button']:focus,
+input[type='reset']:focus,
+input[type='submit']:focus {
 	background-color: #fff;
 	border-color: #0068c4;
 	box-shadow: #0068c4 0 0 .5em 0;
@@ -189,7 +199,7 @@ input[type='submit'] {
 	background-image: linear-gradient(#fff, #e5e5e5);
 	border-color: #ddd #bbb #999;
 	font-weight: 700;
-	line-height: 1.3;
+	line-height: normal;
 	overflow: visible;
 	padding: 3px .5em;
 	text-shadow: #fff 0 1px 1px;
@@ -223,9 +233,18 @@ input[type='submit']:active {
 	box-shadow: inset rgba(0, 0, 0, .25) 0 1px 2px 0;
 }
 
+
+input[type='checkbox'],
+input[type='radio'] {
+	font-size: .6875em;
+	position: relative;
+	top: -1px;
+	vertical-align: middle; /* 2 */
+}
+
 /* 
- * Opera needs this due to universal reset in the base.css file. More
- * information: https://github.com/nathansmith/formalize/issues/45
+ * Opera needs this. More information: 
+ * https://github.com/nathansmith/formalize/issues/45
  */
 
 input[type='checkbox'] {
@@ -234,6 +253,27 @@ input[type='checkbox'] {
 
 input[type='radio'] {
 	margin: 1px;
+}
+
+/*
+ * https://github.com/nathansmith/formalize/issues/43
+ */
+
+select {
+	vertical-align: top;
+}
+
+select[multiple],
+select[size],
+textarea {
+  height: auto;
+}
+
+/* https://github.com/nathansmith/formalize/issues/42 */
+
+select[size='0'],
+select[size='1'] {
+	height: 1.8em;
 }
 
 /* 
@@ -245,32 +285,12 @@ optgroup {
 	font-style: normal;
 }
 
-/*
- * Firefox needs this due to the hard universial reset in the base.css file.
- */
-
-option {
-	padding-left: 1em;
-}
-
-/*
- * https://github.com/nathansmith/formalize/issues/43
- */
-
-select {
-	vertical-align: top;
-}
-
-
-select[multiple],
-select[size],
 textarea {
-  height: auto;
-}
-
-select[size='0'],
-select[size='1'] {
-	height: 1.8em;
+	min-height: 5em;
+	overflow: auto;
+	resize: vertical;
+	vertical-align: top;
+	width: 100%;
 }
 
 @media (-webkit-min-device-pixel-ratio: 0) {
@@ -308,26 +328,22 @@ select[size='1'] {
 
 }
 
-textarea {
-	min-height: 5em;
-	overflow: auto;
-	resize: vertical;
-	vertical-align: top;
-	width: 100%;
-}
-
 /*
  * Removes inner padding and border in FF3+
  * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
  */
 
-::-moz-focus-inner {
+button::-moz-focus-inner,
+input[type='button']::-moz-focus-inner,
+input[type='reset']::-moz-focus-inner,
+input[type='submit']::-moz-focus-inner {
 	border: 0;
 	padding: 0;
 }
 
 textarea[disabled],
 select[disabled],
+input[type='color'][disabled],
 input[type='date'][disabled],
 input[type='datetime'][disabled],
 input[type='datetime-local'][disabled],
@@ -340,7 +356,7 @@ input[type='tel'][disabled],
 input[type='text'][disabled],
 input[type='time'][disabled],
 input[type='url'][disabled],
-input[type='week'][disabled] {
+input[type='week'][disabled], {
 	background-color: #eee;
 }
 

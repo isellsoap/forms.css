@@ -2,14 +2,21 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Demo (normal) | forms.css</title>
+		<title>Demo | forms.css</title>
 		<link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssgrids/grids-min.css">
-		<link rel="stylesheet" href="assets/css/base.css">
+		<style>
+			
+			html {
+				background: #fff;
+				color: #333;
+				margin: 2em auto;
+				width: 60em;
+			}
+			
+		</style>
 		<link rel="stylesheet" href="assets/css/forms.css">
 	</head>
 	<body>
-			
-		<h1>forms.css</h1>
 		
 		<form action="#" onsubmit="return false">
 			
@@ -164,7 +171,10 @@
 				
 				<div class="yui3-g">
 					
-					<div class="yui3-u-1-4">
+					<div class="yui3-u-1-3">
+						
+						<label for="color">color</label>
+						<input type="color" id="color" name="color">
 						
 						<label for="date">date</label>
 						<input type="date" id="date" name="date">
@@ -175,22 +185,18 @@
 						<label for="datetime-local">datetime-local</label>
 						<input type="datetime-local" id="datetime-local" name="datetime-local">
 						
-					</div>
-					
-					<div class="yui3-u-1-4">
-						
 						<label for="email">email</label>
 						<input type="email" id="email" name="email">
+						
+					</div>
+					
+					<div class="yui3-u-1-3">
 						
 						<label for="month">month</label>
 						<input type="month" id="month" name="month">
 						
 						<label for="number">number</label>
 						<input type="number" id="number" name="number" min="0" max="999" step="1">
-						
-					</div>
-					
-					<div class="yui3-u-1-4">
 						
 						<label for="password">password</label>
 						<input type="password" id="password" name="password">
@@ -203,13 +209,19 @@
 						
 					</div>
 					
-					<div class="yui3-u-1-4">
+					<div class="yui3-u-1-3">
 						
 						<label for="url">url</label>
 						<input type="url" id="url" name="url" placeholder="http://">
 						
 						<label for="search">search</label>
 						<input type="search" id="search" name="search">
+						
+						<label for="time">time</label>
+						<input type="time" id="time" name="time">
+						
+						<label for="week">week</label>
+						<input type="week" id="week" name="week">
 						
 					</div>
 			
@@ -221,23 +233,11 @@
 				
 				<legend>Unstyled input types</legend>
 				
-				<div class="yui3-g">
-					
-					<div class="yui3-u-1-2">
-						
-						<label for="file">file</label>
-						<input type="file" id="file" name="file">
-						
-					</div>
-					
-					<div class="yui3-u-1-2">
-						
-						<label for="range">range</label>
-						<input type="range" id="range" name="range">
-						
-					</div>
-					
-				</div>
+				<label for="file">file</label>
+				<input type="file" id="file" name="file">
+				
+				<label for="range">range</label>
+				<input type="range" id="range" name="range">
 				
 			</fieldset>
 			
