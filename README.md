@@ -28,13 +28,6 @@ Check out the [demo](http://isellsoap.github.com/forms.css/demo.html).
 * IE 9+
 * Opera 11+
 * Safari 5+
-
-## Source code
-
-* Available as a [GitHub repository](https://github.com/isellsoap/forms.css).
-* Download the project either in [zip](https://github.com/isellsoap/forms.css/zipball/gh-pages) or [tar](https://github.com/isellsoap/forms.css/tarball/gh-pages) format.
-* Clone the project with [Git](http://git-scm.com/) by using
-	$ git clone git://github.com/isellsoap/forms.css.git
 	
 ## Things to keep in mind
 
