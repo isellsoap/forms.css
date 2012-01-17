@@ -72,8 +72,11 @@ abbr[title] {
 	cursor: help;
 }
 
-address,
-blockquote,
+b, 
+strong {
+	font-weight: 700; 
+}
+
 cite,
 dfn,
 em,
@@ -83,20 +86,6 @@ var {
 	font-style: italic;
 }
 
-address,
-blockquote,
-p,
-pre {
-	line-height: 1.5;
-	margin: 1em 0;
-}
-
-b, 
-strong {
-	font-weight: 700; 
-}
-
-blockquote,
 code,
 ins,
 kbd,
@@ -109,71 +98,13 @@ var {
 	padding: 1px;
 }
 
-blockquote,
 code,
 kbd,
 pre,
 samp,
-table,
 var {
 	background: #f5f5f5;
 	border: 1px solid #e5e5e5;
-}
-
-blockquote {
-	font-size: 1.5em;
-	margin: 1.5em 1em;
-	padding: .75em 1em;
-	position: relative;
-}
-
-blockquote::before,
-blockquote::after {
-	color: #e5e5e5;
-	font-family: Georgia, Times, serif;
-	font-size: 10em;
-	font-style: normal;
-	font-weight: 700;
-	position: absolute;
-	z-index: 0;
-}
-
-blockquote::before {
-	content: '“';
-	left: -.13em;
-	top: -.42em;
-}
-
-blockquote::after {
-	bottom: -.88em;
-	content: '”';
-	right: -.13em;
-}
-
-blockquote p,
-blockquote footer {
-	position: relative;
-	z-index: 1;
-}
-
-blockquote p:first-child {
-	margin-top: 0;
-}
-
-blockquote p:last-child {
-	margin-bottom: 0;
-}
-
-blockquote footer,
-blockquote footer a {
-	color: #888;
-}
-
-code,
-kbd,
-pre,
-samp,
-var {
 	font-family: Menlo, 'Andale Mono', 'Courier New', monospace, serif;
 	font-size: 1em;
 }
@@ -195,14 +126,6 @@ div {
 	outline: 0;
 }
 
-hr {
-	border: 0;
-	border-top: 1px solid #ccc;
-	display: block;
-	height: 1px;
-	margin: 2em 0;
-}
-
 ins,
 mark {
 	background: #ff9;
@@ -216,6 +139,12 @@ u {
 kbd kbd {
 	border: 0;
 	padding: 0;
+}
+
+p,
+pre {
+	line-height: 1.5;
+	margin: 1em 0;
 }
 
 pre {
@@ -292,7 +221,7 @@ img {
 #footer {
 	border-top: 1px solid #ccc;
 	font-size: .875em;
-	margin: 3em 0 2em;
+	margin: 10em 0 2em;
 }
 
 #footer p {
@@ -316,17 +245,55 @@ img {
 	right: 10px;
 }
 
-/*
- * MEDIA QUERIES
- * ###########################################################################
- * ###########################################################################
- * ###########################################################################
- */
+.button {
+	background-color: hsl(208, 100%, 75%);
+	background-image: url(noise.png);
+	background-image: -moz-radial-gradient(top, ellipse cover, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%), url(noise.png);
+	background-image: -webkit-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0.7) )), url(noise.png);
+	background-image: gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0.7) )), url(noise.png);
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	border-radius: .5em;
+	border-top: 1px solid rgba(255, 255, 255, .8);
+	box-shadow: 		inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em, /* inner shadow */ 
+						hsl(208, 50%, 55%) 0 .1em 3px, hsl(208, 50%, 40%) 0 .3em 1px, /* color border */
+						rgba(0,0,0,0.2) 0 .5em 5px;	/* drop shadow */
+	color: hsl(208, 50%, 40%);
+	display: inline-block;
+	font-size: 2.5em;
+	font-weight: 700;
+	margin: .5em 0;
+	padding: .5em 1.5em .4em 1.5em;
+	position: relative;
+	text-decoration: none;
+	text-shadow: rgba(255,255,255,.5) 0 1px 0;
+	-moz-transition: background .15s ease-in-out;
+	-webkit-transition: background .15s ease-in-out;
+	transition: background .15s ease-in-out;
+}
 
-/*
- * Why “min-height”?
- * http://trentwalton.com/2012/01/11/vertical-media-queries-wide-sites/
- */
+.button:focus,
+.button:hover {
+	background-color: hsl(208, 100%, 80%);
+}
+
+.button:focus {
+	outline: 0;
+}
+
+.button:active {
+	background-image: -moz-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) )), url(noise.png);
+	background-image: -webkit-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) )), url(noise.png);
+	background-image: gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) )), url(noise.png);
+	box-shadow: 		inset rgba(255,255,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.2) 0 -0.1em .3em, /* inner shadow */ 
+						rgba(0,0,0,0.4) 0 .1em 1px, /* border */
+						rgba(0,0,0,0.2) 0 .2em 6px; /* drop shadow */
+	-moz-transform: translateY(.2em);
+	-o-transform: translateY(.2em);
+	-webkit-transform: translateY(.2em);
+	transform: translateY(.2em);
+}
+
+/* media queries */
 
 @media only screen and (min-width: 105em) and (min-height: 44em) {
 	
@@ -335,29 +302,18 @@ img {
 		max-width: 44em;
 	}
 	
-	blockquote {
-		margin-left: 1em;
-		margin-right: 1em;
-	}
-	
 }
 
 @media only screen and (max-width: 55em) {
 	
 	#github-watch {
-		margin: 2em 0 -1.5em;
+		margin: 3em 0 -7em;
 		position: static;
 	}
 	
 }
 
 @media only screen and (max-width: 39em) {
-	
-	blockquote {
-		margin-left: 0.5em;
-		margin-right: 0.5em;
-		padding: 0.5em 0.75em;
-	}
 	
 	.fork img {
 		display: none;
@@ -369,10 +325,6 @@ img {
 	
 	html {
 		font-size: .875em;
-	}
-	
-	blockquote {
-		font-size: 1.25em;
 	}
 	
 }
