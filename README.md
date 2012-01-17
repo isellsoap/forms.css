@@ -1,6 +1,6 @@
 # forms.css
 
-Consistent looking forms across all major browsers. Check out the [demo]http://isellsoap.github.com/forms.css/demo.html).
+Consistent looking forms across all major browsers. Check out the [demo](http://isellsoap.github.com/forms.css/demo.html).
 
 ## How to use it
 
