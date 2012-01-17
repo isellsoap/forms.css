@@ -284,6 +284,7 @@ select[size='1'] {
 
 optgroup {
 	font-style: normal;
+	font-weight: 700;
 }
 
 textarea {
