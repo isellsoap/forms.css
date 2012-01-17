@@ -33,7 +33,7 @@ Check out the [demo](http://isellsoap.github.com/forms.css/demo.html).
 
 * This is a work in progress.
 * I’ll try to extend the browser support. Yes, IE 8, I’m looking at you!
-* I completely go along with the makers of [normalize.css](http://necolas.github.com/normalize.css/) when they say about their project that it *“is not intended to be a mysterious ‘black box’ that is included in a project and then ignored. It should be used as a customisable starting point on any project”*. This applies also to forms.css.
+* I completely go along with the makers of [normalize.css](http://necolas.github.com/normalize.css/) when they say about their project that it *“is not intended to be a mysterious ‘black box’ that is included in a project and then ignored. It should be used as a customisable starting point on any project.”* This applies also to forms.css.
 * Elements like `input[type='file']` and `input[type='range']` are just to hard to manage or not manageable at all. I left those out.
 * CSS documentation will be enhanced step by step.
 * Confused about all the files in the folder? In order to run the demo you just need two things: the `demo.html` file and the `assets` folder. You can remove anything else.
