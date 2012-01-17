@@ -234,7 +234,7 @@ img {
 }
 
 .fork img {
-	position: absolute;
+	position: fixed;
 	right: 0;
 	top: 0;
 }
