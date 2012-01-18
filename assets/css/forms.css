@@ -198,10 +198,68 @@ input[type='submit']:focus {
 }
 
 /*
- * CLICKABLE BUTTONS
+ * 1. Needed for browser specific positioning later on.
+ * 2. Improves consistency in all browers.
+ */
+
+input[type='checkbox'],
+input[type='radio'] {
+	position: relative; /* 1 */
+	vertical-align: middle; /* 2 */
+}
+
+/* 
+ * Opera (Mac OS X) needs this. More information: 
+ * https://github.com/nathansmith/formalize/issues/45
+ */
+
+input[type='checkbox'] {
+	margin: 2px 1px;
+}
+
+input[type='radio'] {
+	margin: 1px;
+}
+
+select[multiple],
+select[size],
+textarea {
+  height: auto;
+}
+
+/* https://github.com/nathansmith/formalize/issues/42 */
+
+select[size='0'],
+select[size='1'] {
+	height: 1.8em;
+}
+
+/* 
+ * Only Firefox understands this. Result: Opera and IE have italic font style,
+ * WebKit and Firefox normal font style.
+ */
+
+optgroup {
+	font-style: normal;
+	font-weight: 700;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE browsers.
+ */
+
+textarea {
+	min-height: 5em;
+	overflow: auto; /* 1 */
+	resize: vertical;
+	width: 100%;
+}
+
+/*
+ * All clickable buttons.
  *
- * 1. Fallback for all browsers not supporting linear gradients (like IE 9).
- * ###########################################################################
+ * 1. Fallback for browsers not supporting gradients (like IE 9).
+ * 2. “Pushed in” effect for active state.
  */
 
 button,
@@ -233,9 +291,7 @@ input[type='submit']:hover {
 	background-image: linear-gradient(#fff, #d9d9d9);
 }
 
-/*
- * “Pushed in” effect for active state.
- */
+/* 2 */
 
 button:active,
 input[type='button']:active,
@@ -250,76 +306,55 @@ input[type='submit']:active {
 	box-shadow: inset rgba(0, 0, 0, .25) 0 1px 2px 0;
 }
 
-
-input[type='checkbox'],
-input[type='radio'] {
-	font-size: .6875em;
-	position: relative;
-	vertical-align: middle;
-}
-
-@-moz-document url-prefix() {
-	input[type='checkbox'] {
-		top: -2px;
-	}
-	
-	input[type='radio'] {
-		top: -1px;
-	}
-}
-
 /* 
- * Opera needs this. More information: 
- * https://github.com/nathansmith/formalize/issues/45
+ * Disabled states.
  */
 
-input[type='checkbox'] {
-	margin: 2px 1px;
+input[type='color'][disabled],
+input[type='date'][disabled],
+input[type='datetime'][disabled],
+input[type='datetime-local'][disabled],
+input[type='email'][disabled],
+input[type='month'][disabled],
+input[type='number'][disabled],
+input[type='password'][disabled],
+input[type='search'][disabled],
+input[type='tel'][disabled],
+input[type='text'][disabled],
+input[type='time'][disabled],
+input[type='url'][disabled],
+input[type='week'][disabled],
+select[disabled],
+textarea[disabled] {
+	background-color: #eee !important;
 }
 
-input[type='radio'] {
-	margin: 1px;
+input[disabled],
+select[disabled],
+select[disabled] option,
+select[disabled] optgroup,
+textarea[disabled],
+button[disabled] {
+	color: #888;
+	cursor: default;
+	-khtml-user-select: none;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	user-select: none;
 }
 
-select[multiple],
-select[size],
-textarea {
-  height: auto;
-}
-
-/* https://github.com/nathansmith/formalize/issues/42 */
-
-select[size='0'],
-select[size='1'] {
-	height: 1.8em;
-}
-
-/* 
- * Oddly only Firefox understands this. Result: Opera and IE have italic font
- * style, WebKit and Firefox normal font style.
+/*
+ * WebKit specific stuff.
  */
-
-optgroup {
-	font-style: normal;
-	font-weight: 700;
-}
-
-textarea {
-	min-height: 5em;
-	overflow: auto;
-	resize: vertical;
-	vertical-align: top;
-	width: 100%;
-}
 
 @media (-webkit-min-device-pixel-ratio: 0) {
 	
 	input[type='checkbox'] {
-		top: -1px;
+		top: -2px;
 	}
 	
 	input[type='radio'] {
-		top: -2px;
+		top: -3px;
 	}
 	
 	input[type='search'] {
@@ -335,8 +370,12 @@ textarea {
 		border-radius: 0;
 	}
 	
+	/*
+	 * 1. https://github.com/nathansmith/formalize/issues/44
+	 */
+	
 	select[multiple],
-	select[multiple][size],
+	select[multiple][size], /* 1 */
 	select[size] {
 		background-image: none;
 		padding-right: 3px;
@@ -352,7 +391,28 @@ textarea {
 	::-webkit-input-placeholder {
 		color: #888;
 	}
+	
+}
 
+/*
+ * Firefox specific stuff.
+ */
+
+@-moz-document url-prefix() {
+	
+	input[type='checkbox'] {
+		top: -2px;
+	}
+	
+	input[type='radio'] {
+		top: -1px;
+	}
+	
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+	color: #888;
 }
 
 /*
@@ -366,43 +426,4 @@ input[type='reset']::-moz-focus-inner,
 input[type='submit']::-moz-focus-inner {
 	border: 0;
 	padding: 0;
-}
-
-textarea[disabled],
-select[disabled],
-input[type='color'][disabled],
-input[type='date'][disabled],
-input[type='datetime'][disabled],
-input[type='datetime-local'][disabled],
-input[type='email'][disabled],
-input[type='month'][disabled],
-input[type='number'][disabled],
-input[type='password'][disabled],
-input[type='search'][disabled],
-input[type='tel'][disabled],
-input[type='text'][disabled],
-input[type='time'][disabled],
-input[type='url'][disabled],
-input[type='week'][disabled], {
-	background-color: #eee;
-}
-
-button[disabled],
-input[disabled],
-select[disabled],
-select[disabled] option,
-select[disabled] optgroup,
-textarea[disabled] {
-	box-shadow: none;
-	color: #888;
-	cursor: default;
-	-khtml-user-select: none;
-	-moz-user-select: -moz-none;
-	-webkit-user-select: none;
-	user-select: none;
-}
-
-input:-moz-placeholder,
-textarea:-moz-placeholder {
-	color: #888;
 }
