@@ -198,14 +198,17 @@ input[type='submit']:focus {
 }
 
 /*
- * 1. Needed for browser specific positioning later on.
- * 2. Improves consistency in all browers.
+ * 1. A font size of 100% (as specified in the first rule set) would render
+ *    check boxes and radio buttons bigger in Webkit browsers (Mac OS X).
+ * 2. Needed for browser specific positioning later on.
+ * 3. Improves consistency in all browers.
  */
 
 input[type='checkbox'],
 input[type='radio'] {
-	position: relative; /* 1 */
-	vertical-align: middle; /* 2 */
+	font-size: .6875em; /* 1 */
+	position: relative; /* 2 */
+	vertical-align: middle; /* 3 */
 }
 
 /* 
@@ -350,11 +353,11 @@ button[disabled] {
 @media (-webkit-min-device-pixel-ratio: 0) {
 	
 	input[type='checkbox'] {
-		top: -2px;
+		top: -1px;
 	}
 	
 	input[type='radio'] {
-		top: -3px;
+		top: -2px;
 	}
 	
 	input[type='search'] {
