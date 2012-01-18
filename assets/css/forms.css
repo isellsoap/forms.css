@@ -1,47 +1,49 @@
 @charset 'utf-8';
 
 /* 
- * 1. “optgroup” needs explicit declaration because Firefox doesn’t inherit 
- *    font family specified for “select”. More information: 
- *    https://github.com/nathansmith/formalize/issues/41
+ * 1. Firefox doesn’t inherit font family specified for “select”. More 
+ *    information: https://github.com/nathansmith/formalize/issues/41
  * 2. Change this according to your site’s font (family) configuration. Be 
  *    aware that changing font size and line height affects vertical alignment
- *    of check boxes and radio buttons. I know, it sucks. But there’s just no
- *    “holy grail” for vertically aligning those input types.
+ *    of check boxes and radio buttons. There’s no “holy grail” for vertically
+ *    aligning those input types.
  * 3. If you use a universal reset for “margin” and “padding” in your site’s 
  *    base CSS file you don’t need this.
+ * 4. Corrects color not being inherited in IE8/9.
+ * 5. Tailored to the demo page with all given HTML markup dependencies and 
+ *    so on. Please change according to your needs.
  */
 
 form,
-button,
 input,
 select,
 optgroup, /* 1 */
-textarea {
+textarea,
+button {
 	font: 100%/1.5 'Helvetica Neue', Helvetica, Arial, sans-serif; /* 2 */
 	margin: 0; /* 3 */
 	padding: 0; /* 3 */
 }
 
-/*
- * The following five rule sets are tailored to the demo page with all given 
- * HTML markup dependencies and so on. Please change according to your needs.
- */
-
 fieldset {
 	border: 1px solid #ccc;
-	margin: 1.5em 0;
+	margin: 1.5em 0; /* 5 */
 	padding: 1em;
 }
 
 legend {
+	border: 0; /* 4 */
 	color: #888;
 	padding: 0 .5em;
 }
 
+/* 5 */
+
 label {
 	display: block;
 }
+
+/* 5 */
 
 input + label {
 	margin-top: 1em;
@@ -53,31 +55,42 @@ input[type='radio'] + label {
 	margin: 0 2em 0 0;
 }
 
-/*
- * Consistent cursor behaviour. Oddly WebKit browsers use “pointer” only when 
- * “size” attribute with value 0 or 1 is present.
+/* 
+ * 1. WebKit browsers use “pointer” only when “size” attribute with value 0
+ *    or 1 is present.
  */
 
 label,
+input[type='checkbox'],
+input[type='radio'],
+select, /* 1 */
 button,
 input[type='button'],
 input[type='reset'],
-input[type='submit'],
-input[type='checkbox'],
-input[type='radio'],
-select {
+input[type='submit'] {
 	cursor: pointer;
 }
 
 /*
- * The reason why I list all input types one by one and not just use 
- * “input” is this: I don’t want to address input types “file” and “range”.
+ * Improves appearancy and consistency in all browsers.
+ * 
+ * 1. https://github.com/nathansmith/formalize/issues/43
+ * 2. Firefox sets line height using “!important” in the UA style sheet.
  */
 
-button,
-input[type='button'],
-input[type='reset'],
-input[type='submit'],
+input,
+select, /* 1 */
+textarea,
+button {
+	line-height: normal; /* 2 */
+	vertical-align: top;
+}
+
+/*
+ * The reason why I list all input types one by one and not just “input” is 
+ * this: I don’t want to address input types “file” and “range”.
+ */
+
 input[type='color'],
 input[type='date'],
 input[type='datetime'],
@@ -93,7 +106,11 @@ input[type='time'],
 input[type='url'],
 input[type='week'],
 select,
-textarea {
+textarea,
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
 	-moz-background-clip: padding;
 	-ms-background-clip: padding-box;
 	-o-background-clip: padding-box;
@@ -238,8 +255,17 @@ input[type='checkbox'],
 input[type='radio'] {
 	font-size: .6875em;
 	position: relative;
-	top: -1px;
-	vertical-align: middle; /* 2 */
+	vertical-align: middle;
+}
+
+@-moz-document url-prefix() {
+	input[type='checkbox'] {
+		top: -2px;
+	}
+	
+	input[type='radio'] {
+		top: -1px;
+	}
 }
 
 /* 
@@ -253,15 +279,6 @@ input[type='checkbox'] {
 
 input[type='radio'] {
 	margin: 1px;
-}
-
-/*
- * https://github.com/nathansmith/formalize/issues/43
- */
-
-select {
-	line-height: normal;
-	vertical-align: top;
 }
 
 select[multiple],
@@ -296,6 +313,14 @@ textarea {
 }
 
 @media (-webkit-min-device-pixel-ratio: 0) {
+	
+	input[type='checkbox'] {
+		top: -1px;
+	}
+	
+	input[type='radio'] {
+		top: -2px;
+	}
 	
 	input[type='search'] {
 		-webkit-appearance: none;
